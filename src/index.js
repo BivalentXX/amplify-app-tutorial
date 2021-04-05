@@ -3,6 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Amplify from 'aws-amplify'
+import awsconfig from './aws-exports'
+import { DataStore } from '@aws-amplify/datastore';
+import { Comment } from './models';
+
+Amplify.configure(awsconfig)
+
+await DataStore.save(
+  new Comment({
+  "text": "Lorem ipsum dolor sit amet",
+  "author": "Lorem ipsum dolor sit amet",
+  "postID": "a3f4095e-39de-43d2-baf4-f8c16f0f6f4d"
+})
+);
 
 ReactDOM.render(
   <React.StrictMode>
