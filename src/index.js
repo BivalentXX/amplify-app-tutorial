@@ -10,7 +10,7 @@ import { Comment } from './models';
 
 Amplify.configure(awsconfig)
 
-await DataStore.save(
+DataStore.save(
   new Comment({
   "text": "Lorem ipsum dolor sit amet",
   "author": "Lorem ipsum dolor sit amet",
